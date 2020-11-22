@@ -18,13 +18,13 @@ jobs:
     - name: Clean cache
       run: npm cache clean --force
     - name: Env check first time
-      run: ls
+      run: ls -lrt
     - name: Install Packages
-      run: npm install
-    - name: Env check
-      run: ls #chmod -R a+rwx ./node_modules 
+      run: npm install 
     - name: Env check
       run: chmod -R a+rwx ./node_modules 
+    - name: Env check
+      run: ls -lrt
     - name: Build page
       run: npm run build
     - name: Deploy to gh-pages
