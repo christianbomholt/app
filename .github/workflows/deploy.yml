@@ -17,11 +17,13 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Clean cache
       run: npm cache clean --force
+    - name:
+      run: echo $process.env.CI
     - name: Env check first time
       run: ls -lrt
     - name: Install Packages
       run: npm install 
-    - name: Env check
+    - name: Changing permissions
       run: chmod -R a+rwx ./node_modules 
     - name: Env check
       run: ls -lrt
