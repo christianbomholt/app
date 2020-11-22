@@ -17,6 +17,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Clean cache
       run: npm cache clean --force
+    - name: Env check first time
+      run: ls
     - name: Install Packages
       run: npm install
     - name: Env check
