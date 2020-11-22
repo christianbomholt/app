@@ -17,8 +17,12 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: Clean cache
       run: npm cache clean --force
+    - name: Run clean
+      run: npm run clean
     - name: Install Packages
       run: npm install
+    - name: Env check
+      run: ls #chmod -R a+rwx ./node_modules 
     - name: Build page
       run: npm run build
     - name: Deploy to gh-pages
